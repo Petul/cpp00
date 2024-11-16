@@ -12,7 +12,7 @@
 
 NAME := megaphone
 CXX := c++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++11 -g
+CXXFLAGS := -Wall -Wextra -Werror -std=c++11
 SOURCES := megaphone.cpp
 
 OBJECTS := $(SOURCES:.cpp=.o)
@@ -23,7 +23,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 		$(CXX) $(OBJECTS) -o $(NAME)
 
-%.o: %.c
+%.o: %.cpp
 		$(CXX) $(CXXFLAGS) -c $< -o $@
 
 .PHONY: clean
