@@ -1,0 +1,38 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/11/15 12:57:11 by pleander          #+#    #+#              #
+#    Updated: 2024/11/16 11:30:10 by pleander         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME := AccountTests
+CXX := c++
+CXXFLAGS := -Wall -Wextra -Werror -std=c++11 -g
+SOURCES := src/Account.cpp src/tests.cpp
+
+OBJECTS := $(SOURCES:.cpp=.o)
+
+.PHONY: all
+all: $(NAME)
+
+$(NAME): $(OBJECTS)
+		$(CXX) $(OBJECTS) -I ./include -o $(NAME)
+
+%.o: %.cpp
+		$(CXX) $(CXXFLAGS) -I ./include -c $< -o $@
+
+.PHONY: clean
+clean:
+		rm -f $(OBJECTS)
+
+.PHONY: fclean
+fclean: clean
+		rm -f $(NAME)
+
+.PHONY: re
+re: fclean all
