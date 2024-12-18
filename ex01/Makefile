@@ -6,14 +6,14 @@
 #    By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/15 12:57:11 by pleander          #+#    #+#              #
-#    Updated: 2024/11/16 11:30:10 by pleander         ###   ########.fr        #
+#    Updated: 2024/12/18 09:32:29 by pleander         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := phonebook
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++11 -g
-SOURCES := src/contact.cpp src/phonebook.cpp src/main.cpp
+SOURCES := contact.cpp phonebook.cpp main.cpp
 
 OBJECTS := $(SOURCES:.cpp=.o)
 
@@ -21,10 +21,10 @@ OBJECTS := $(SOURCES:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-		$(CXX) $(OBJECTS) -I ./include -o $(NAME)
+		$(CXX) $(OBJECTS) -o $(NAME)
 
 %.o: %.cpp
-		$(CXX) $(CXXFLAGS) -I ./include -c $< -o $@
+		$(CXX) $(CXXFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:

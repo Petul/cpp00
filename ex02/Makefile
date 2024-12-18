@@ -6,14 +6,14 @@
 #    By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/15 12:57:11 by pleander          #+#    #+#              #
-#    Updated: 2024/11/16 11:30:10 by pleander         ###   ########.fr        #
+#    Updated: 2024/12/18 10:06:35 by pleander         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := AccountTests
 CXX := c++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++11 -g
-SOURCES := src/Account.cpp src/tests.cpp
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98
+SOURCES := Account.cpp tests.cpp
 
 OBJECTS := $(SOURCES:.cpp=.o)
 

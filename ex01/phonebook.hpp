@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.h                                        :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:56:39 by pleander          #+#    #+#             */
-/*   Updated: 2024/11/16 12:18:41 by pleander         ###   ########.fr       */
+/*   Updated: 2024/12/18 09:53:24 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
 #define N_CONTACTS 8
 
-#include "contact.h"
+#include "contact.hpp"
 
-class PhoneBook {
-
-  public:
+class PhoneBook
+{
+   public:
 	PhoneBook();
 	void show_contact(size_t index);
 	void show_all();
@@ -27,7 +27,7 @@ class PhoneBook {
 	                 std::string nickname, std::string phone_number,
 	                 std::string darkest_secret);
 
-  private:
+   private:
 	size_t next_i_;
 	Contact contacts_[N_CONTACTS];
 };
